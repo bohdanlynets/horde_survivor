@@ -466,10 +466,10 @@
   let angle;
 
   if (game.skill === "chaos") {
-    // Skill 3 shoots in a completely random direction.
+
     angle = Math.random() * Math.PI * 2;
   } else {
-    // Other skills automatically aim at the closest enemy.
+
     const target = getAutoAimTarget();
 
     if (target) {
@@ -576,10 +576,8 @@
     while (game.healingMilestone < newMilestone) {
       game.healingMilestone++;
 
-      // Increase current HP without a maximum limit.
       player.hp += 1;
 
-      // Increase bullet damage permanently.
       player.bulletDamage += 1;
 
       createParticles(player.x, player.y, "#62e6a5", 12);
@@ -687,8 +685,6 @@
     }
 
     function drawPlayer() {
-  // Draw only the character body.
-  // The rotating arrow/weapon has been removed.
   ctx.save();
 
   ctx.shadowColor = "#62e6a5";
